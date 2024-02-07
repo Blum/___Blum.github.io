@@ -1,4 +1,9 @@
 {
+    "name": "blum/iliyana",
+    "type": "project",
+    "description": "Iliyana T Static Website",
+    
+    "license": "MIT",
     "require": {
         "tightenco/jigsaw": "^1.7"
     }
