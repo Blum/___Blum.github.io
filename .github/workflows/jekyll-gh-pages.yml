@@ -26,6 +26,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+
+
+        
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Pages
@@ -37,6 +41,16 @@ jobs:
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
+
+      - name: Install dependencies
+        run: composer install
+    
+
+      - name: Build production
+        run: vendor/bin/jigsaw build production
 
   # Deployment job
   deploy:
