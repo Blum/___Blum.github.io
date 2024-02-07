@@ -2,4 +2,5 @@
 
 return [
     'production' => true,
+    'build' => 'docs/'
 ];
